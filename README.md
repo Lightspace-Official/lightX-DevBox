@@ -16,3 +16,9 @@ python projects online.) To get started, just type 'print('Hello World!')' (with
 * package program 
 * example
 
+## Next features
+- [ ] Will support more programmming languages 
+- [ ] Use a portable version of python to run this independently 
+- [ ] Make a building tool to build lX Code 
+- [ ] Compile all this code 
+- [ ] Make support for Windows CMD
