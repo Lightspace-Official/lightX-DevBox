@@ -1,6 +1,6 @@
 import os
 import requests
-
+from zipfile import ZipFile
 crash = 0
 example_package = 'https://github.com/Lightspace-Official/lightX-DevBox/blob/packages/example.lxpkg?raw=true'
 example_package_r = requests.get(example_package, allow_redirects=True)
@@ -26,8 +26,10 @@ while (crash == 0):
         os.system('Unpackage.py');
     elif text == ('install pkg'):
         progam_to_be_installed = input('Which program?')
+
         if progam_to_be_installed == ('example'):
             open('example.lxpkg', 'wb').write(example_package_r.content)
+            file_name = ('example.lxpkg')
             with ZipFile(file_name, 'r') as zip:
   
             # extracting all the files
@@ -35,10 +37,24 @@ while (crash == 0):
              zip.extractall()
              print('example Installed')
              print('Use cd example + run program to start example.')
+
+        elif progam_to_be_installed == ('compiler'):
+            open('compiler.lxpkg', 'wb').write(compiler_package_r.content)
+            file_name2 = ('compiler.lxpkg')
+            with ZipFile(file_name2, 'r') as zip:
+  
+            # extracting all the files
+             print('Installing compiler...')
+             zip.extractall()
+             print('compiler Installed')
+             print("Use 'cd' + 'compiler' + 'run program' + 'run.lxp' to start the compiler.")
+        else:
+            print('Package not found.')
+
     elif text == ('cd'):
-        cd = input('Which folder?')
+        cd = input('Which folder? ')
         os.chdir(cd)
-        print('Changed to' + cd)
+        print('Changed to ' + cd)
     else:
         print('Error - Invalid command')
     
