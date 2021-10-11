@@ -14,7 +14,7 @@ while (crash == 0):
         os.system("ide.py");
     elif text == ('pkg program'):
         print('Directing you to packager...')
-        os.system("Packager.py");
+        os.system("Package.py");
     elif text == ('run program'):
         print('Which program? (Input relative path)')
         program_run = input('')
