@@ -4,6 +4,8 @@ import requests
 crash = 0
 example_package = 'https://github.com/Lightspace-Official/lightX-DevBox/blob/packages/example.lxpkg?raw=true'
 example_package_r = requests.get(example_package, allow_redirects=True)
+compiler_package = 'https://github.com/Lightspace-Official/lightX-DevBox/blob/packages/compiler.lxpkg?raw=true'
+compiler_package_r = requests.get(compiler_package, allow_redirects=True)
 while (crash == 0):   
     text = input('lx >')
 
