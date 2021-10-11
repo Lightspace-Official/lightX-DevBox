@@ -13,18 +13,20 @@ python projects online.) To get started, just type 'print('Hello World!')' (with
 lX can install external packages and apps from our repo so you can use external code to make your own, such as mosules and etc. To install a package, use 'install pkg' to choose a package and use it, currently only the 'example' package is available and you can download it using 'install pkg' and then 'example' to download it, then use cd to mount the 'cd' dir, and then use 'run program' and then 'example.lxp'. Well done, you have installed a external module!
 
 ## Build support
-lX can build for Windows, but it is still in BETA, you can build by first using (Use lightX to do this), 'install pkg' then 'compiler' and the wait for it to complete, then 'cd' then 'compiler' after 'run program' and then finally 'run.lxp'. This will open our GUI compiler, which you can use to compile .lxp programs.
+lX can build for Windows, but it is still in BETA, you can build by first using (Use lightX to do this), 'install pkg' then 'compiler' and the wait for it to complete, then 'cd' then 'compiler' after 'run program' and then 'lx requirementsments.txt', this command will download and install all the pip packages you need for the compiler.After, 'run program', and lastly, type 'run.lxp'. This will open our GUI compiler, which you can use to compile .lxp programs.
 
 ### Use Windows CMD 
 To use this you must edit the PATH so it directs you to the root directory of lightX, you can do this by opening the app called 'edit system varibles' on this page click Path then Edit, then press 'new' and enter the directory of lightX, which normally is 'C:\Program Files (x86)\lightX DevBox'.Now you can type 'lightX' in the CMD to launch lightX!
 
 ## Commands 
-* mk program
-* run program
-* package program 
-* example
-* install pkg
-* cd
+* mk program - Opens the IDE for you to make a new lxp program
+* run program - Runs a lxp program
+* pkg program - Packages a program folder and all the programs inside it
+* example - A example command
+* install pkg - Installs a external package from the lX server
+* cd - Mounts a directory
+* lx pip - Installs a external PyPI package for lxp programs
+* lx requirements.txt - Installs all the PyPI packages needed for a program
 
 ## Roadmap
 - [ ] Will support more programmming languages 
