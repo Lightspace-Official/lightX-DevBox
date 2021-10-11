@@ -20,7 +20,7 @@ while (crash == 0):
     elif text == ('run program'):
         print('Which program? (Input relative path)')
         program_run = input('')
-        os.system(program_run);
+        os.system('python ' + program_run);
     elif text == ('unpkg program'):
         print('Directing you to unpackager...')
         os.system('Unpackage.py');
