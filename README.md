@@ -1,9 +1,9 @@
 # lightX DevBox
 A Development environment for packaging and managing lX code. Currently in very early BETA.
 ## How to use
-1. Install the latest release, by the setup .exe.
-2. launch lightX
-3. You're done!
+1. Install [Python 3.9](https://www.python.org/ftp/python/3.9.7/python-3.9.7.exe) (Do not use Python 3.10)
+2. Install the setup file from our releases page. (Look on the right)
+3. Launch lightX from the start menu!
 
 ## How to code in lX
 Initilize a new project by typing 'mk program' in the lX command prompt, and after use the IDE to create your program. (lX uses python for coding, so search up for example 
