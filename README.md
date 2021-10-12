@@ -29,9 +29,8 @@ To use this you must edit the PATH so it directs you to the root directory of li
 * lx requirements.txt - Installs all the PyPI packages needed for a program
 
 ## Roadmap
-- [ ] Will support more programmming languages 
+- [ ] Will support more programmming languages (See milestones)
 - [ ] Use a portable version of python to run this independently 
 - [x] Make a building tool to build lX Code (See milestones)
 - [ ] Compile all this code 
-- [x] Make support for Windows CMD
-- [ ] Make build support 
+- [x] Make support for Windows CMD 
