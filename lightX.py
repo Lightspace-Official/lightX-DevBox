@@ -9,7 +9,7 @@ example_package = 'https://github.com/Lightspace-Official/lightX-DevBox/blob/pac
 example_package_r = requests.get(example_package, allow_redirects=True)
 compiler_package = 'https://github.com/Lightspace-Official/lightX-DevBox/blob/packages/compiler.lxpkg?raw=true'
 compiler_package_r = requests.get(compiler_package, allow_redirects=True)
-print('lighX DevBox Shell By Lightspace Org, Fully Open Source ')
+print('lightX DevBox Shell By Lightspace Org, Fully Open Source ')
 while (crash == 0):   
     text = input('lx >')
 
