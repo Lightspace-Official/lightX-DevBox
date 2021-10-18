@@ -1,5 +1,5 @@
 # lightX DevBox
-A Development environment for packaging and managing lX code. Currently in very early BETA.
+A Development environment for packaging and managing lX code. Currently in its early releases, we reccommend do not install lX until we launch v2.0, as some things are broken.
 ## How to use
 1. Install [Python 3.9](https://www.python.org/ftp/python/3.9.7/python-3.9.7.exe) (Do not use Python 3.10)
 2. Install the setup file from our releases page. (Look on the right)
