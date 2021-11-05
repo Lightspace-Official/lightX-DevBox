@@ -1,5 +1,5 @@
 # lightX DevBox
-A Development environment for packaging and managing lX code. Currently in its early releases, we reccommend do not install lX until we launch v2.0, as some things are broken.
+A Development environment for packaging and managing lX code. Currently in its early releases, we recommend to not install lX until we launch v2.0, as some things are broken.
 ## How to use
 1. Install [Python 3.9](https://www.python.org/ftp/python/3.9.7/python-3.9.7.exe) (Do not use Python 3.10)
 2. Install the setup file from our releases page. (Look on the right)
@@ -10,13 +10,15 @@ Initilize a new project by typing 'mk program' in the lX command prompt, and aft
 python projects online.) To get started, just type 'print('Hello World!')' (without the quotes) in the IDE, click Save As, and save it in the same directory as lightX. Go back to lX Cmd Prompt, and type in 'run program', type in the full name of your program, and lX will run it for you. When you are done, use 'pkg program' to locate the folder of your project and convert it to a single lX Package. Easy as that! To unpack a code pack, use Unpackage.py manually to unpack it.
 
 ## Install external packages
-lX can install external packages and apps from our repo so you can use external code to make your own, such as modules and etc. To install a package, use 'install pkg' to choose a package and use it, currently only the 'example' package is available and you can download it using 'install pkg' and then 'example' to download it, then use cd to mount the 'cd' dir, and then use 'run program' and then 'example.lxp'. Well done, you have installed a external module!
+lX can install external packages and apps from our repo so you can use external code to make your own, such as modules and etc. To install a package, use 'install pkg' to choose a package and use it, currently only the 'example' package is available and you can download it using 'install pkg' and then 'example' to download it, then use cd to mount the 'cd' dir, and then use 'run program' and then 'example.lxp'. Well done, you have installed a external module! <br>
+
+You can download more lightX DB packages by looking and searching for what package you need. Look in the 'packages' branch.
 
 ## Build support
-lX can build for Windows, but it is still in BETA, you can build by first opening lightX DB, then type 'install pkg' then 'compiler' and the wait for it to complete, then 'cd' then 'compiler' after 'run program' and then 'lx requirementsments.txt', this command will download and install all the pip packages you need for the compiler.After, 'run program', and lastly, type 'run.lxp'. This will open our GUI compiler, which you can use to compile .lxp programs.
+lX can build for Windows, but it is still in BETA, you can build by first opening lightX DB Terminal, then type 'install pkg' then 'compiler' and the wait for it to complete, then 'cd' then 'compiler' after 'run program' and then 'lx requirementsments.txt', this command will download and install all the pip packages you need for the compiler.After, 'run program', and lastly, type 'run.lxp'. This will open our GUI compiler, which you can use to compile .lxp programs.
 
 ### Use Windows CMD 
-To use this you must edit the PATH so it directs you to the root directory of lightX, you can do this by opening the app called 'edit system varibles' on this page click Path then Edit, then press 'new' and enter the directory of lightX, which normally is 'C:\Program Files (x86)\lightX DevBox'.Now you can type 'lightX' in the CMD to launch lightX!
+To use this you must edit the PATH so it directs you to the root directory of lightX, you can do this by opening the app called 'Edit system varibles', on this page click Path then Edit, then press 'new' and enter the directory of lightX, which usually is 'C:\Program Files (x86)\lightX DevBox'. Now you can type 'lightX' in the CMD to launch lightX!
 
 ## Commands 
 * mk program - Opens the IDE for you to make a new lxp program
@@ -35,3 +37,4 @@ To use this you must edit the PATH so it directs you to the root directory of li
 - [ ] Compile all this code 
 - [x] Make support for Windows CMD 
 - [ ] Make support for LightX OS System & Apps
+- [ ] Make support for NodeJS
