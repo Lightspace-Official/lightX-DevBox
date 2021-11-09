@@ -1,14 +1,18 @@
 # lightX DevBox
 A Development environment for packaging and managing lX code. Currently in its early releases, we recommend to not install lX until we launch v2.0, as some things are broken.
+## How to use (for v2)
+1. Install the setup file from our releases page. (Look on the right)
+2. Launch lightX from the start menu!
+
 ## How to use (for v1)
 1. Install [Python 3.9](https://www.python.org/ftp/python/3.9.7/python-3.9.7.exe) (Do not use Python 3.10)
 2. Install the setup file from our releases page. (Look on the right)
 3. Launch lightX from the start menu!
 
 ## New features & Notices
-### New LASM Asssembly Support
+#### New LASM Asssembly Support
 lightX DB now supports LASM! (LightX Assembler) This Assembler develops for the LightX Operating System and has the feature to create new Assembly OS's. Even though this feature is still in BETA, it will be released in v2.0. This will be published in a external GLIP package.
-### Modifying Main LightX DB Support
+#### Modifying Main LightX DB Support
 V2.0 will support external installed GLIP packages to modify the main lightX program to make new commands to the main Terminal. This enables external package makers to make usage of their package easier. 
 ## How to code in lX
 Initilize a new project by typing 'mk program' in the lX command prompt, and after use the IDE to create your program. (lX uses python for coding, so search up for example 
@@ -33,10 +37,11 @@ lightX DevBox supports LASM (lightX Assembler) to make and build .asm files. Use
 * run program - Runs a lxp program
 * pkg program - Packages a program folder and all the programs inside it
 * example - A example command
-* install pkg - Installs a external package from the lX server
+* glip install - Installs a external GLIP package from the lX server
 * cd - Mounts a directory
 * lx pip - Installs a external PyPI package for lxp programs
 * lx requirements.txt - Installs all the PyPI packages needed for a program
+* help
 
 ## Roadmap
 - [ ] Will support more programmming languages (See milestones)
