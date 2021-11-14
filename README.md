@@ -49,10 +49,7 @@ lightX DevBox supports LASM (lightX Assembler) to make and build .asm files. Use
 
 ## Roadmap
 - [ ] Will support more programmming languages (See milestones)
-- [x] Use a portable version of python to run this independently 
-- [x] Make a building tool to build lX Code (See milestones)
-- [x] Compile all this code 
-- [x] Make support for Windows CMD 
+- [x] Use a portable version of python to run this independently  
 - [x] Make support for LightX OS System & Apps
 - [ ] Make support for NodeJS
 
