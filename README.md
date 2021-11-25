@@ -1,4 +1,5 @@
 # lightX DevBox
+![image](https://raw.githubusercontent.com/Lightspace-Official/lightX-DevBox/main/images/light.png)
 A Development environment for packaging and managing lX code. We recommend to not install lX for production purposes until we launch v2.0, as some things may be a little buggy.
 ## How to use (for v2)
 1. Install the setup file from our releases page. (Look on the right)
