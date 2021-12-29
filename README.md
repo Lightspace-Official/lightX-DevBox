@@ -1,18 +1,18 @@
 # lightX DevBox
 ![image](https://raw.githubusercontent.com/Lightspace-Official/lightX-DevBox/main/images/light.png)
-LightX DB 2 is coming soon! lightX is a development environment to manage, create, use & publish code.
-## How to use (for v2)
+LightX is a development environment to manage, create, use & publish code easily & on one platform.
+## How to install (for v2)
 1. Install the setup file from our releases page. (Look on the right)
 2. Launch lightX from the start menu!
 
-## How to use (for v1)
+## How to install (for v1)
 1. Install [Python 3.9](https://www.python.org/ftp/python/3.9.7/python-3.9.7.exe) (Do not use Python 3.10)
 2. Install the setup file from our releases page. (Look on the right)
 3. Launch lightX from the start menu!
 
 ## New features & Notices
-### lX 2 Release date published!
-lX 2 will be released on 1st of January of 2022, on New Year's Day! We hope you have a happy new year and remember to check out the brand new lX 2!
+### lightX 2 Release Date Delayed
+lightX 2 will have a delay, due to numerous bugs apppering in the software we make, lightX 2 will probably be postponed till the 10th to 21st of January, 2022. Remember, this is all to make lightX better and better!
 #### NOTE: v1 support notice
 As you know, v2.0 would be released, and you may be in doubt that v1 would be still continued, the v1 version line will still be continued until further notice, due to v2 being much more heavier & having Python built-in. 
 #### Modifying lX will not be supported
@@ -26,13 +26,13 @@ GLIP is the official package manager for lightX DB. GLIP stands for 'General Lig
 
 You can download more GLIP packages by looking and searching for what package you need. For the packages list, see our wiki.
 
-## Build support (only for l2) (BETA)
+## Build support (only for lX 2) (BETA)
 lX can build for Windows, but it is still in BETA, you can build by first opening lightX DB Terminal, then type 'install pkg' then 'compiler' and the wait for it to complete, then 'cd' then 'compiler' after 'run program' and then 'lx requirementsments.txt', this command will download and install all the pip packages you need for the compiler. After, 'run program', and lastly, type 'run.lxp'. This will open our GUI compiler, which you can use to compile .lxp programs.
 
-### Use Windows CMD 
+### Use Windows CMD (only for lX 1)
 To use this you must edit the PATH so it directs you to the root directory of lightX, you can do this by opening the app called 'Edit system varibles', on this page click Path then Edit, then press 'new' and enter the directory of lightX, which usually is 'C:\Program Files (x86)\lightX DevBox'. Now you can type 'lightX' in the CMD to launch lightX!
 
-### NASM Support (only for v2) (BETA)
+### NASM Support (only for lX 2) (BETA)
 lightX DevBox supports NASM (lightX Assembler) to make and build .asm files. Use this feature by installing the module called `lasm` and this will modify the main lightX code to build .asm files. This feature is still in BETA & will most likely be released in our lX 2 launch.
 
 ## Commands 
@@ -44,16 +44,19 @@ lightX DevBox supports NASM (lightX Assembler) to make and build .asm files. Use
 * cd - Mounts a directory
 * lx pip - Installs a external PyPI package for lxp programs
 * lx requirements.txt - Installs all the PyPI packages needed for a program
+* nasm - Opens the NASM On lightX Builder
+* compile - Opens the lightX Compiler
+* nodejs - Opens the NodeJS for lightX Program.
 * help - Helps you with your lX commands. 
 
 ## Roadmap
 - [ ] Will support more programmming languages (See milestones)
-- [x] Use a portable version of python to run this independently  
-- [x] Make support for LightX OS System & Apps
-- [x] Make support for NodeJS (Very experimental)
+- [x] Use a portable version of python to run this independently. (Minor bugs)
+- [x] Make support for LightX OS System & Apps. (Experimental)
+- [x] Make support for NodeJS (Experimental)
 
-## Developing a new module or package
+## Developing a new module or package (For lX 2)
 To make a new module or package, use either compiled (.exe) or LXP programs for your module. To make a new module that makes a new command for lightX DB, make a program that modifies the main lightX DB and make a new command. For more info, visit our wiki. 
 
 ## The lightX DevBox code
-To find out how lightX code works, or get your head around it, go to our wiki.
+To find out how lightX code works, or get your head around it, go to our wiki on the lightX DevBox gitHub page.
