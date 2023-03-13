@@ -1,6 +1,6 @@
 # lightX DevBox
 ![image](https://raw.githubusercontent.com/Lightspace-Official/lightX-DevBox/main/images/light.png)
-LightX is a development environment to manage, create, use & publish code easily & on one platform.
+LightX is a development environment to manage, create, use & publish code easily on one platform.
 ## How to install (for v2)
 1. Install the setup file from our releases page. (Look on the right)
 2. Launch lightX from the start menu!
