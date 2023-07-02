@@ -11,12 +11,13 @@ LightX is a development environment to manage, create, use & publish code easily
 3. Launch lightX from the start menu!
 
 ## New features & Notices
+### Welcome back!
+We haven't been coding or improving this tool for over a year. It is safe to say now that we are back on track, and v2 isn't too far away!
 ### lightX 2 Release Date Delayed
 lightX 2 will have a delay, due to numerous bugs apppering in the software we make, lightX 2 will probably be postponed till the 10th to 21st of January, 2022. Remember, this is all to make lightX better and better!
 #### NOTE: v1 support notice
-As you know, v2.0 would be released, and you may be in doubt that v1 would be still continued, the v1 version line will still be continued until further notice, due to v2 being much more heavier & having Python built-in. 
-#### Modifying lX will not be supported
-Configuring and modifying the main lightX DB program will result in a huge number of problems and errors, to replace this error, lightX will make all the external programs commands built-in, which means if you use the command without installing the package, it will result in a user failure.
+As you know, v2.0 would be released, and you may be in doubt that v1 would be still continued, the v1 version line will still be continued until further notice, due to v2 being much more heavier & having Python built-in. v1 will be supported until 2024.
+
 ## How to code in lX
 Initilize a new project by typing 'mk program' in the lX command prompt, and after use the IDE to create your program. (lX uses python for coding, so search up for example 
 python projects online.) To get started, just type 'print('Hello World!')' (without the quotes) in the IDE, click Save As, and save it in the same directory as lightX. Go back to lX Cmd Prompt, and type in 'run program', type in the full name of your program, and lX will run it for you. When you are done, use 'pkg program' to locate the folder of your project and convert it to a single lX Package. Easy as that! To unpack a code pack, use Unpackage.py manually to unpack it. For more info, visit our wiki.
