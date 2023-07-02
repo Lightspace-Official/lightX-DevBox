@@ -1,98 +1,113 @@
 import os
 import requests
 from zipfile import ZipFile
-from tkinter import Tk     # from tkinter import Tk for Python 3.x
 from tkinter.filedialog import askopenfilename
 
-crash = 0 # Crash variable, this causes the lightX DB to crash
-# Below this comment is the package list for GLIP
-example_package = 'https://github.com/Lightspace-Official/lightX-DevBox/blob/packages/example.lxpkg?raw=true' # Example package link
-example_package_r = requests.get(example_package, allow_redirects=True)
-compiler_package = 'https://github.com/Lightspace-Official/lightX-DevBox/blob/packages/compiler.lxpkg?raw=true' # Compiler Package link
-compiler_package_r = requests.get(compiler_package, allow_redirects=True)
-# Above this comment is the package list for GLIP
-print('lightX DevBox Shell By Lightspace Org, Fully Open Source ') # Intro 
-while (crash == 0):   
-    text = input('lx >')
+crash = 0  # Crash variable, this causes the lightX DB to crash
 
-    if text == ('example'): # Example command
-     print('Welcome to lightX DevBox')
-     
-    elif text == ('mk program'): # Opens the IDE to make a new program
+# Package URLs for GLIP
+example_package_url = 'https://github.com/Lightspace-Official/lightX-DevBox/blob/packages/example.lxpkg?raw=true'
+compiler_package_url = 'https://github.com/Lightspace-Official/lightX-DevBox/blob/packages/compiler.lxpkg?raw=true'
+
+# Fetching package files
+example_package_r = requests.get(example_package_url, allow_redirects=True)
+compiler_package_r = requests.get(compiler_package_url, allow_redirects=True)
+
+print('lightX DevBox Shell By Lightspace Org, Fully Open Source')  # Intro
+
+while crash == 0:
+    text = input('lx > ')
+
+    if text == 'example':
+        print('Welcome to lightX DevBox')
+
+    elif text == 'mk program':
         print('Using IDE to make a new program...')
-        os.system("WPy32-3950\python-3.9.5\python.exe ide.py");
+        os.system("WPy32-3950\python-3.9.5\python.exe ide.py")
 
-    elif text == ('pkg program'): # Packages a program folder
+    elif text == 'pkg program':
         print('Directing you to packager...')
-        os.system("WPy32-3950\python-3.9.5\python.exe Package.py");
+        os.system("WPy32-3950\python-3.9.5\python.exe Package.py")
+    
+    elif text.startswith('run '):
+        program_run = text[4:]
+        os.system(r'WPy32-3950\python-3.9.5\python.exe ' + program_run + r'\run.lxp')
 
-    elif text == ('run program'): # Runs a .lxp program
-        print('Which program? (Input relative path)')
-        program_run = input('')
-        os.system('WPy32-3950\python-3.9.5\python.exe ' + program_run);
+        
 
-    elif text == ('unpkg program'): #Unpackages a lxpkg file
+    elif text == 'unpkg program':
         print('Directing you to unpackager...')
-        os.system('WPy32-3950\python-3.9.5\python.exe Unpackage.py');
+        os.system('WPy32-3950\python-3.9.5\python.exe Unpackage.py')
 
-    elif text == ('glip install'): # This command is used to install a package from lXPI
-        progam_to_be_installed = input('Which program?')
+    elif text.startswith('glip install '):
+        program_to_be_installed = text[13:]
 
-        if progam_to_be_installed == ('example'): #example pkg install command
+        if program_to_be_installed == 'example':
             open('example.lxpkg', 'wb').write(example_package_r.content)
-            file_name = ('example.lxpkg')
-            with ZipFile(file_name, 'r') as zip:
-  
-            # extracting all the files
-             print('Installing example...')
-             zip.extractall()
-             print('example Installed')
-             print('Use cd example + run program to start example.')
+            file_name = 'example.lxpkg'
+            with ZipFile(file_name, 'r') as zip_file:
+                print('Installing example...')
+                zip_file.extractall()
+                print('Example installed')
+                print('Use "cd example" and "run program" to start example.')
 
-        elif progam_to_be_installed == ('compiler'): # compiler 'if' command
+        elif program_to_be_installed == 'compiler':
             open('compiler.lxpkg', 'wb').write(compiler_package_r.content)
-            file_name2 = ('compiler.lxpkg')
-            with ZipFile(file_name2, 'r') as zip:
-  
-            # extracting all the files
-             print('Installing compiler...')
-             zip.extractall()
-             print('compiler Installed')
-             print("Use 'cd' + 'compiler' + 'run program' + 'run.lxp' to start the compiler.")
+            file_name2 = 'compiler.lxpkg'
+            with ZipFile(file_name2, 'r') as zip_file:
+                print('Installing compiler...')
+                zip_file.extractall()
+                print('Compiler installed')
+                print('Use "run compiler" to start the compiler.')
         else:
             print('Package not found.')
 
-    elif text == ('cd'): #cd command
-        cd = input('Which folder? ')
+    elif text.startswith('cd '):
+        cd = text[3:]  # Extract folder name from command
         os.chdir(cd)
         print('Directory changed to ' + cd)
 
-    elif text == ('lx pip install'): #This command uses PyPI to install external pip packages
-        pipPackage = input('Which pip module would you like to install? ')
-        os.system('pip install ' + pipPackage)
-        print('All Done!')
+    elif text.startswith('lx pip install '):
+        pip_package = text[16:]  # Extract package name from command
+        os.system('pip install ' + pip_package)
+        print('Installation complete!')
 
-    elif text == ('lx requirements.txt'): #This command downloads and installs all the requirements that a lX program needs
-        os.system('WPy32-3950\python-3.9.5\python.exe pip install -r requirements.txt')
+    elif text == 'lx requirements.txt':
+        os.system('\WPy32-3950\WinPython%20Command%20Prompt.exe pip install -r requirements.txt')
         print('Pip packages installed!')
 
-    elif text == ('exit'): #Exit command
+    elif text == 'ls':
+        files = os.listdir()
+        for file in files:
+            print(file)
+
+    elif text.startswith('cat '):
+        file_name = text[4:]  # Extract file name from command
+        try:
+            with open(file_name, 'r') as file:
+                content = file.read()
+                print(content)
+        except FileNotFoundError:
+            print('File not found!')
+
+    elif text == 'exit':
         exit()
-    elif text == ('help'): # Help command
-        help = input('Which command do you need help with?')
-        if help == ('mk program'):
-            print('This program opens the lX IDE for you to make a new program. (Though this IDE will be removed in the future)')
-        elif help == ('pkg program'):
-            print('This command opens the Unpackager which allows you to unpkg a .lxpkg file.')
-        elif help == ('glip install'):
-            print('GLIP is the default package manager of lightX DB, install packages by this command.')
-        elif help == ('lx pip install'):
-            print('This command installs external PyPI packages. ')
-        else:
-            print('Help for this command is not found')   
+
+    elif text == 'help':
+        print('Available commands:')
+        print('example                 - Welcome message')
+        print('mk program              - Open the IDE to make a new program')
+        print('pkg program             - Package a program folder')
+        print('run program             - Run a .lxp program')
+        print('unpkg program           - Unpackage a .lxpkg file')
+        print('glip install            - Install a package from lXPI')
+        print('cd <folder>             - Change directory')
+        print('lx pip install <module> - Install external PyPI packages')
+        print('lx requirements.txt     - Install required packages from requirements.txt')
+        print('ls                      - List files in the current directory')
+        print('cat <file>              - Display the content of a file')
+        print('exit                    - Exit the program')
+
     else:
-        print('Error - Invalid command') # Error message
-    
-    
-     
+        print('Error - Invalid command')  # Error message
     
