@@ -57,7 +57,7 @@ lightX DevBox supports NASM (lightX Assembler) to make and build .asm files. Use
 - [x] Make support for NodeJS (Experimental)
 
 ## Developing a new module or package (For lX 2)
-To make a new module or package, use either compiled (.exe) or LXP programs for your module. To make a new module that makes a new command for lightX DB, make a program that modifies the main lightX DB and make a new command. For more info, visit our wiki. 
+To make a new module or package, use either compiled (.exe) or LXP programs for your module. To make a new module that makes a new command for lightX DB, you have to make a LXP application, and after package it and upload it to the modules branch. After this, create a pull request to input the link onto the main LXP program. For more info, visit our wiki. 
 
 ## The lightX DevBox code
 To find out how lightX code works, or get your head around it, go to our wiki on the lightX DevBox gitHub page.
