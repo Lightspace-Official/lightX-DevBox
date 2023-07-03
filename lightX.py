@@ -8,6 +8,9 @@ crash = 0  # Crash variable, this causes the lightX DB to crash
 # Package URLs for GLIP
 example_package_url = 'https://github.com/Lightspace-Official/lightX-DevBox/blob/packages/example.lxpkg?raw=true'
 compiler_package_url = 'https://github.com/Lightspace-Official/lightX-DevBox/blob/packages/compiler.lxpkg?raw=true'
+nasm_package_url = 'https://github.com/Lightspace-Official/lightX-DevBox/blob/packages/nasm.lxpkg?raw=true'
+nodejs_package_url = 'https://github.com/Lightspace-Official/lightX-DevBox/blob/packages/nodejs.lxpkg?raw=true'
+
 
 # Fetching package files
 example_package_r = requests.get(example_package_url, allow_redirects=True)
@@ -33,34 +36,25 @@ while crash == 0:
         program_run = text[4:]
         os.system(r'WPy32-3950\python-3.9.5\python.exe ' + program_run + r'\run.lxp')
 
+    elif text.startswith('runw '):
+        program_run = text[5:]
+        os.system(r'start ' + program_run + r'\run.exe')
         
-
     elif text == 'unpkg program':
         print('Directing you to unpackager...')
         os.system('WPy32-3950\python-3.9.5\python.exe Unpackage.py')
 
-    elif text.startswith('glip install '):
+    elif text.startswith('glip install '):    
         program_to_be_installed = text[13:]
-
-        if program_to_be_installed == 'example':
-            open('example.lxpkg', 'wb').write(example_package_r.content)
-            file_name = 'example.lxpkg'
-            with ZipFile(file_name, 'r') as zip_file:
-                print('Installing example...')
-                zip_file.extractall()
-                print('Example installed')
-                print('Use "cd example" and "run program" to start example.')
-
-        elif program_to_be_installed == 'compiler':
-            open('compiler.lxpkg', 'wb').write(compiler_package_r.content)
-            file_name2 = 'compiler.lxpkg'
-            with ZipFile(file_name2, 'r') as zip_file:
-                print('Installing compiler...')
-                zip_file.extractall()
-                print('Compiler installed')
-                print('Use "run compiler" to start the compiler.')
-        else:
-            print('Package not found.')
+        package_url = (r'https://github.com/Lightspace-Official/lightX-DevBox/blob/packages/' + program_to_be_installed + r'.lxpkg?raw=true')
+        package_r = requests.get(package_url, allow_redirects=True)
+        open(program_to_be_installed + r'.lxpkg', 'wb').write(package_r.content)
+        file_name2 = program_to_be_installed + r'.lxpkg'
+        with ZipFile(file_name2, 'r') as zip_file:
+            print(r'Installing ' + program_to_be_installed)
+            zip_file.extractall()
+            print(program_to_be_installed + r' installed')
+            print(r'Use run or runw (for .exe apps)' + program_to_be_installed + r' to run the program')
 
     elif text.startswith('cd '):
         cd = text[3:]  # Extract folder name from command
@@ -107,7 +101,8 @@ while crash == 0:
         print('ls                      - List files in the current directory')
         print('cat <file>              - Display the content of a file')
         print('exit                    - Exit the program')
+        print('help                    - Display this message')
 
     else:
-        print('Error - Invalid command')  # Error message
+        print('Error - Invalid command')  # Error message for invalid command
     
